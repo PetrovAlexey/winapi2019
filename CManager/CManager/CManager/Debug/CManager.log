@@ -1,0 +1,9 @@
+﻿  CManager.cpp
+c:\users\алексей\source\repos\cmanager\cmanager\cmanager.cpp(1): warning C4067: непредвиденные лексемы за директивой препроцессора, требуется newline
+c:\users\алексей\source\repos\cmanager\cmanager\cmanager.cpp(13): warning C4101: buf: неиспользованная локальная переменная
+c:\users\алексей\source\repos\cmanager\cmanager\cmanager.cpp(12): warning C4101: dwBytesRead: неиспользованная локальная переменная
+c:\users\алексей\source\repos\cmanager\cmanager\cmanager.cpp(104): warning C4244: аргумент: преобразование "float" в "DWORD", возможна потеря данных
+c:\users\алексей\source\repos\cmanager\cmanager\cmanager.cpp(105): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\алексей\source\repos\cmanager\cmanager\cmanager.cpp(107): warning C4244: аргумент: преобразование "float" в "DWORD", возможна потеря данных
+c:\users\алексей\source\repos\cmanager\cmanager\cmanager.cpp(109): warning C4244: аргумент: преобразование "float" в "DWORD", возможна потеря данных
+  CManager.vcxproj -> C:\Users\Алексей\source\repos\CManager\Debug\CManager.lib

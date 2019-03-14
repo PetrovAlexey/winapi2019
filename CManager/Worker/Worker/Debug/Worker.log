@@ -1,0 +1,5 @@
+﻿  Worker.cpp
+c:\users\алексей\source\repos\worker\worker\worker.cpp(51): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\алексей\source\repos\worker\worker\worker.cpp(80): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\алексей\source\repos\worker\worker\worker.cpp(82): warning C4018: <: несоответствие типов со знаком и без знака
+  Worker.vcxproj -> C:\Users\Алексей\source\repos\Worker\Debug\Worker.exe
