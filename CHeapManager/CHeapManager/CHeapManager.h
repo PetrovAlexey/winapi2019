@@ -94,8 +94,6 @@ void* CHeapManager::Alloc(int size)
 		buckets[getBucket(freeSize)]->insert(std::make_pair(tempAddres, ITEM(bucketSize - allocSize, tempAddres, true)));
 	}
 	memoryCommiter(addres, allocSize, true);
-	
-	//printInfo();
 
 	return addres;
 }
@@ -163,17 +161,16 @@ void CHeapManager::Free(void* ptr) {
 			index = i;
 			sizeFree = bucketIt->second.size;
 			addres = bucketIt->second.addres;
-			//std::cout << "delete " << ptr << " size: " << bucketIt->second.size << std::endl;
 			break;
 		}
 	}
 	freeSize += sizeFree;
 	memoryCommiter(addres, sizeFree, false);
 	mergeBuckets(bucketIt, index);
-	//printInfo();
 }
 
 void CHeapManager::memoryCommiter(LPVOID address, int alloc_size, bool commit) {
+
 	std::map<LPVOID, std::pair<bool, int>>::iterator it;
 	it = pages.upper_bound(address);
 	LPVOID firstPage = nullptr;
@@ -192,7 +189,7 @@ void CHeapManager::memoryCommiter(LPVOID address, int alloc_size, bool commit) {
 	if (alloc_size < rest) {
 		num = 1;
 	}
-	//std::cout << firstPage << "! " << num << std::endl;
+
 	auto current = pages.find(firstPage);
 	int sizeCommit = alloc_size;
 	LPVOID pagesCommit = nullptr;
@@ -258,8 +255,6 @@ CHeapManager::CHeapManager(int min_size, int max_size)
 	hHeap = VirtualAlloc(NULL, max_size, MEM_RESERVE, PAGE_READWRITE);
 	VirtualAlloc(hHeap, min_size, MEM_COMMIT, PAGE_READWRITE);
 
-	//printf(" hHeap Address: %p\n", hHeap);
-	//printf("\n-------------------------------------\n\n");	
 
 	buckets[0] = &sm;
 	buckets[1] = &md;
@@ -284,8 +279,6 @@ void CHeapManager::CHeapCreate(int min_size, int max_size)
 	hHeap = VirtualAlloc(NULL, max_size, MEM_RESERVE, PAGE_READWRITE);
 	VirtualAlloc(hHeap, min_size, MEM_COMMIT, PAGE_READWRITE);
 
-	//printf(" hHeap Address: %p\n", hHeap);
-	//printf("\n-------------------------------------\n\n");	
 
 	buckets[0] = &sm;
 	buckets[1] = &md;
